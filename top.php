@@ -12,8 +12,11 @@
   <script>
   $(document).ready(function () {
     var page  = window.location.pathname.match(/\/(\w+)\/$/)[1];
-    var link = page + '-link';
-    $('#' + link).addClass('selected');
+    var link = $('#' + page + '-link');
+    if (!link.length) {
+      link = $('#home-link');
+    }
+    link.addClass('selected');
   });
   </script>
   <?php
@@ -50,7 +53,7 @@ _END;
   <div id="header">
 <?php
 if (!LOGGED_IN) {
-    echo '<div id="loggedin"><a class="block-link" href="' . SITE_ROOT . '/login">Login</a></div>';
+    echo '<div id="loggedin"><a class="block-link" href="' . SITE_ROOT . '/login/">Login</a></div>';
 }
 ?>
     <div id="logo">

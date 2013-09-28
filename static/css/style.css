@@ -48,11 +48,11 @@ textarea {
 }
 
 .accept:after {
-  content: url('../Images/accept.png');
+  content: url('../img/accept.png');
 }
 
 .cancel:after {
-  content: url('../Images/cancel.png');
+  content: url('../img/cancel.png');
 }
 
 input:hover,

@@ -5,7 +5,7 @@
     <div class="form-left">
       <p class="first field">
         <label for="name">Name</label>
-        <input type="text" name="name" id="name" />
+        <input type="text" name="name" id="name" autofocus />
       </p>
       <p class="field">
         <label for="email">Email</label>
@@ -36,7 +36,6 @@
 </div>
 
 <script type="text/javascript">
-  setFocus("name");  
   $(document).ready(function() {
     $('input, textarea').blur(function() {
       if (!$(this).val().trim()) {

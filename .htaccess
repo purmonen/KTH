@@ -1,8 +1,14 @@
 RewriteEngine On
 Options FollowSymLinks
 
-RewriteRule ^blog/(\d+)/?$ blog.php?id=$1
-RewriteRule ^newpost/(\d+)/?$ newpost.php?id=$1
+RewriteCond %{REQUEST_URI} ^(.*)/(.*)/$
+RewriteRule ^blog/(\d+)/?$ %1/blog.php?id=$1
 
-RewriteRule ^blog/(\d+)/(\d+)/?$ blog.php?year=$1&month=$2
-RewriteRule ^(portfolio|contact|blog|login|logout|newpost|deletepost|editpost)/?$ $1.php
+RewriteCond %{REQUEST_URI} ^(.*)/(.*)/$
+RewriteRule ^newpost/(\d+)/?$ %1/newpost.php?id=$1
+
+RewriteCond %{REQUEST_URI} ^(.*)/(.*)/$
+RewriteRule ^blog/(\d+)/(\d+)/?$ %1/blog.php?year=$1&month=$2
+
+RewriteCond %{REQUEST_URI} ^(.*)/(.*)/$
+RewriteRule ^(portfolio|contact|blog|login|logout|newpost|deletepost|editpost)/?$ %1/$1.php
