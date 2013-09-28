@@ -3,8 +3,10 @@ include 'config.php';
 include 'db.php';
 include 'functions.php';
 
+require_login();
+
 if (isset($_POST['title']) && isset($_POST['content'])) {
-	$id = pg_escape_string($_POST['id']);
+	$id = $_POST['id'];
 	$title = pg_escape_string($_POST['title']);
 	$content = pg_escape_string($_POST['content']);
 	connect_db();

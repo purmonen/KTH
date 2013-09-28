@@ -1,6 +1,9 @@
 <?php
 include 'config.php';
 include 'db.php';
+include 'functions.php';
+
+require_login();
 
 connect_db();
 $id = pg_escape_string($_GET['id']);

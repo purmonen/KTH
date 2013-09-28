@@ -10,12 +10,12 @@
         ?>
         <p>
         <label for="title">Title</label>
-        <input type="text" name="title" id="title" value="<?php echo stripslashes($post['title']); ?>">
+        <input type="text" name="title" id="title" value="<?php echo unescape_db($post['title']); ?>">
         <input type="hidden" name="id" value="<?php echo $post['id'] ?>">
         </p>
         <p>
         <label for="content">Content</label>
-        <textarea type="text" name="content" id="content"><?php echo stripslashes($post['content']); ?></textarea>
+        <textarea type="text" name="content" id="content"><?php echo unescape_db($post['content']); ?></textarea>
         </p>
         <button type="submit">Enter</button>
     </form>

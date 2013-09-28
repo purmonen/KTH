@@ -13,7 +13,7 @@
 <body>
 <fieldset>
     <legend>Log in</legend>
-    <form id="login-form" action="<?php SITE_ROOT ?>/login/" method="post">
+    <form id="login-form" action="" method="post">
         <label for="username">Username</label>
         <input type="text" name="username" id="username">
         <label for="password">Password</label>

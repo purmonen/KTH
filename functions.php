@@ -1,12 +1,18 @@
 <?php
-function render($template, $data) {
-
-	$rendered_string = file_get_contents($template);
-
-	foreach ($data as $key=>$value) {
-		$pattern = '/{{\s*' . $key . '\s*}}/';
-		$rendered_string = preg_replace($pattern, $value, $rendered_string);
+function require_login() {
+	if (!LOGGED_IN) {
+		redirect('login');
 	}
+}
 
-	echo $rendered_string;
+function redirect($page) {
+	header('location: ' . SITE_ROOT . '/' . $page . '/');
+}
+
+function escape_db($str) {
+	return str_replace("'", "''", $str);
+}
+
+function unescape_db($str) {
+	return str_replace("''", "'", $str);
 }
