@@ -5,7 +5,13 @@ if ($_SESSION['loggedin']) {
 } else {
 	define('LOGGED_IN', false);
 }
-define('SITE_ROOT', 'http://localhost/purmonen');
+
+
+if ($_SERVER['SERVER_NAME'] === 'http://www.nada.kth.se') {
+	define('SITE_ROOT', 'http://www.nada.kth.se/~purmonen/KTH');
+} else {
+	define('SITE_ROOT', 'http://localhost/purmonen');
+}
 define('IMG_ROOT', SITE_ROOT . '/static/img');
 define('CSS_ROOT', SITE_ROOT . '/static/css');
 define('JS_ROOT', SITE_ROOT . '/static/js');
