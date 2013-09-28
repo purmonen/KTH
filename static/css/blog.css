@@ -1,0 +1,96 @@
+.post {
+  border-bottom: 2px solid #ccc;
+  margin-right: 20px;
+  margin-bottom: 30px;
+}
+
+.post h2 {
+}
+
+.last-post {
+    border-bottom: none;
+    margin-bottom: -20px;
+}
+
+h2 a,
+h3 a {
+  color: #d06060;
+}
+
+h2 a:active,
+h2 a:hover {
+    text-decoration: none;
+}
+
+.post-header {
+  border-bottom: 1px solid #eee;
+}
+
+.post-link {
+  padding: 10px 5px;
+  display: block;
+  color: #555;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.post-link:active,
+.post-link:hover {
+  background-color: #d06060;
+  border-bottom: 1px solid #d06060;
+  color: white;
+  text-decoration: none; 
+}
+
+.tags {
+   margin-top: 25px;
+}
+
+/* ----- newpost ----- */
+#newpost {
+    width: 600px;
+    margin: 0 auto;
+}
+#newpost textarea {
+    width: 500px;
+    height: 300px; 
+}
+#newpost input {
+    width: 250px;
+}
+
+#newpost label {
+    display: block;
+}
+
+#newpost [type="submit"] {
+    background-color: #d06060;
+    border: none;
+    height: 50px;
+    width: 120px;
+    color: white;
+    font-size: 1.5em;
+}
+
+#newpost [type="submit"]:hover,
+#newpost [type="submit"]:active {
+    background-color: #c05050;
+    cursor: pointer;
+}
+
+#log {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.delete {
+    display: inline;
+}
+
+.delete [type="submit"],
+.update [type="submit"] {
+    width: 50px;
+}
+
+.update {
+    display: inline;
+}

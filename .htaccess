@@ -1,0 +1,8 @@
+RewriteEngine On
+Options FollowSymLinks
+
+RewriteRule ^blog/(\d+)/?$ blog.php?id=$1
+RewriteRule ^newpost/(\d+)/?$ newpost.php?id=$1
+
+RewriteRule ^blog/(\d+)/(\d+)/?$ blog.php?year=$1&month=$2
+RewriteRule ^(portfolio|contact|blog|login|logout|newpost|deletepost|editpost)/?$ $1.php
