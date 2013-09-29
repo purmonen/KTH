@@ -10,7 +10,6 @@ if (isset($_POST['title']) && isset($_POST['content'])) {
 	$content = pg_escape_string($_POST['content']);
 	connect_db();
 	$query = "insert into " . BLOG_TABLE . " (title, content) values ('$title', '$content')";
-	echo $query;
 	pg_query($query);
 	redirect('blog');
 }

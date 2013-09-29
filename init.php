@@ -8,9 +8,12 @@ $con = pg_connect($con_string);
 pg_query('drop table if exists blog_post');
 $query = file_get_contents('init.sql');
 pg_query($query);
-$result = pg_query('select * from blog_post');
+$result = pg_query('select * from posts');
 while ($row = pg_fetch_assoc($result)) {
-	echo var_dump($row);
-	echo '<br>';
-	echo $row['content'];
+	$id = $row['id'];
+	$title = pg_escape_string($row['title']);
+	$content = pg_escape_string($row['content']);
+	$time = pg_escape_string($row['time']);
+	$query = "insert into blog_post values ($id, '$title', '$content', '$time')";
+	pg_query($query);
 }

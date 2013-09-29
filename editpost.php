@@ -10,9 +10,9 @@ if (isset($_POST['title']) && isset($_POST['content'])) {
 	$title = pg_escape_string($_POST['title']);
 	$content = pg_escape_string($_POST['content']);
 	connect_db();
-	$query = "update blog_post set title='$title', content='$content' where id=$id";
+	$query = "update " . BLOG_TABLE . " set title='$title', content='$content' where id=$id";
 	pg_query($query);
-	header('location: ' . SITE_ROOT . '/blog/');
+	redirect('blog');
 }
 include 'top.php';
 

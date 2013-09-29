@@ -1,10 +1,12 @@
 <div id="main-left">
   <div class="section">
 
-
 <?php
 
 $index = 0;
+if (!$posts) {
+  echo 'No posts';
+} else {
 foreach ($posts as $post) {
     $last = '';
     if ($index === sizeof($posts)-1) {
@@ -12,11 +14,12 @@ foreach ($posts as $post) {
     }
     $title = stripslashes($post['title']);
     $content = stripslashes($post['content']);
+    $time = substr($post['time'], 0, 16);
     echo <<<_END
 <div class="post $last">
   <div class="post-header">
     <h2><a href="$SITE_ROOT/blog/$post[id]/">$title</a></h2>
-    <p class="datetime">Posted by <span class="author">$post[name]</span> on $post[date], $post[time]</p>
+    <p class="datetime">Posted by <span class="author">Sami Purmonen</span> on $time</p>
   </div>
   <p class="content">$content</p>
 _END;
@@ -34,6 +37,7 @@ _END;
     }
     echo '</div>';
     $index++;
+}
 }
 ?>
 

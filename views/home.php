@@ -6,11 +6,18 @@
     of Computer Science at the Royal Institute of Technology.
     I have a strong interest in programming, web development and all sorts of
     computer related stuff. I'm currently looking for side jobs and side projects. 
-    Feel free to contact me on my <a href="<?php echo SITE_ROOT ?>/contact">contact page</a>.</p>
+    Feel free to contact me on my <a href="<?php echo SITE_ROOT ?>/contact/">contact page</a>.</p>
 </div>
 
 <div class="section">
-
+<?php
+echo <<<_END
+<div class="post last-post">
+    <h3>$title</h3>
+  <p class="content">$content <a href="$SITE_ROOT/blog/">Read the blog</a></p>
+</div>
+_END;
+?>
 </div>
 <div class="section">
     <p id="experience">I have experience in the following areas</p>
